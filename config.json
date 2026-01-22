@@ -1,0 +1,21 @@
+{
+  "discord_webhook_url": "",
+  "db_path": "seen.sqlite3",
+  "user_agent": "DealHunter/1.0 (+rss)",
+  "timeout_seconds": 20,
+  "sources": [
+    { "name": "Slickdeals Frontpage", "url": "https://slickdeals.net/newsearch.php?mode=frontpage&searcharea=deals&searchin=first&rss=1" },
+    { "name": "Reddit r/buildapcsales", "url": "https://www.reddit.com/r/buildapcsales/new.rss" },
+    { "name": "Reddit r/deals", "url": "https://www.reddit.com/r/deals/new.rss" }
+  ],
+  "watchlists": [
+    {
+      "name": "GPU",
+      "include": ["rtx 5070", "5070", "rtx 5060 ti", "5060ti", "16gb"],
+      "exclude": ["prebuilt", "laptop"],
+      "max_price": 650,
+      "preferred_merchants": ["Best Buy", "Walmart", "Newegg", "Micro Center"],
+      "max_results": 8
+    }
+  ]
+}
