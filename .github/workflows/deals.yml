@@ -1,13 +1,10 @@
 name: Deal Hunter
 
 on:
-  # Automatic schedule (UTC). This runs 2x per hour and avoids minute 0.
   schedule:
-    - cron: "17 * * * *"
-  # Manual run button in Actions tab
+    - cron: "7 * * * *"
   workflow_dispatch: {}
 
-# Prevent overlapping runs (saves minutes if a run is slow)
 concurrency:
   group: deal-hunter
   cancel-in-progress: true
@@ -18,11 +15,9 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -43,7 +38,7 @@ jobs:
           path: seen.sqlite3
           key: seen-db-v1
 
-      - name: Run deal hunter
+      - name: Run
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
