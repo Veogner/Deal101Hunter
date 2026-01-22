@@ -3,18 +3,106 @@
   "db_path": "seen.sqlite3",
   "user_agent": "DealHunter/1.0 (+rss)",
   "timeout_seconds": 20,
+
   "sources": [
-    { "name": "Slickdeals Frontpage", "url": "https://slickdeals.net/newsearch.php?mode=frontpage&searcharea=deals&searchin=first&rss=1" },
-    { "name": "Reddit r/buildapcsales", "url": "https://www.reddit.com/r/buildapcsales/new.rss" },
-    { "name": "Reddit r/deals", "url": "https://www.reddit.com/r/deals/new.rss" }
+    {
+      "name": "Slickdeals Frontpage",
+      "url": "https://slickdeals.net/newsearch.php?mode=frontpage&rss=1&searcharea=deals&searchin=first"
+    },
+    {
+      "name": "Slickdeals Popular",
+      "url": "https://slickdeals.net/newsearch.php?mode=popdeals&rss=1&searcharea=deals&searchin=first"
+    },
+    {
+      "name": "Slickdeals Trending",
+      "url": "https://feeds.feedburner.com/SlickdealsnetUP"
+    },
+
+    {
+      "name": "DealNews Most Recent",
+      "url": "https://www.dealnews.com/?rss=1&sort=time"
+    },
+
+    {
+      "name": "TechBargains",
+      "url": "http://www.techbargains.com/rss.xml"
+    },
+    {
+      "name": "Ben's Bargains",
+      "url": "http://bensbargains.net/rss/"
+    },
+
+    {
+      "name": "Reddit r/buildapcsales (new)",
+      "url": "https://www.reddit.com/r/buildapcsales/new.rss"
+    },
+    {
+      "name": "Reddit r/deals (new)",
+      "url": "https://www.reddit.com/r/deals/new.rss"
+    },
+    {
+      "name": "Reddit r/3dprintingdeals (new)",
+      "url": "https://www.reddit.com/r/3dprintingdeals/new.rss"
+    },
+
+    {
+      "name": "Reddit r/deals search: filament",
+      "url": "https://www.reddit.com/r/deals/search.rss?q=filament%20OR%20%22pla%20filament%22%20OR%20%22petg%20filament%22%20OR%20%22tpu%20filament%22&sort=new"
+    },
+    {
+      "name": "Reddit r/deals search: kitchen",
+      "url": "https://www.reddit.com/r/deals/search.rss?q=%22air%20fryer%22%20OR%20%22instant%20pot%22%20OR%20%22rice%20cooker%22%20OR%20blender&sort=new"
+    }
   ],
+
   "watchlists": [
     {
       "name": "GPU",
-      "include": ["rtx 5070", "5070", "rtx 5060 ti", "5060ti", "16gb"],
-      "exclude": ["prebuilt", "laptop"],
+      "include": ["rtx 5070", "5070 ti", "rtx 5060 ti", "5060ti", "16gb", "gddr7"],
+      "exclude": ["laptop", "notebook", "prebuilt", "desktop pc", "gaming pc", "workstation", "mini pc", "barebones", "chromebook"],
       "max_price": 650,
-      "preferred_merchants": ["Best Buy", "Walmart", "Newegg", "Micro Center"],
+      "preferred_merchants": ["Best Buy", "Walmart", "Newegg", "Micro Center", "B&H"],
+      "max_results": 8
+    },
+    {
+      "name": "Filament / 3D Printing",
+      "include": [
+        "filament",
+        "pla filament",
+        "petg filament",
+        "tpu filament",
+        "asa filament",
+        "abs filament",
+        "nylon filament",
+        "pa-cf",
+        "paht-cf",
+        "bambu",
+        "polymaker",
+        "elegoo",
+        "sunlu",
+        "overture",
+        "esun",
+        "hatchbox"
+      ],
+      "exclude": ["laptop", "notebook", "prebuilt", "desktop pc", "gaming pc", "workstation", "mini pc", "barebones", "chromebook", "resin", "vat", "fep"],
+      "max_price": 30,
+      "preferred_merchants": ["Amazon", "Walmart", "Micro Center", "Bambu", "eSUN"],
+      "max_results": 8
+    },
+    {
+      "name": "Kitchen",
+      "include": ["air fryer", "instant pot", "rice cooker", "blender", "keurig", "toaster oven", "microwave"],
+      "exclude": ["laptop", "notebook", "prebuilt", "desktop pc", "gaming pc", "workstation", "mini pc", "barebones", "chromebook", "replacement", "filter"],
+      "max_price": 150,
+      "preferred_merchants": ["Walmart", "Best Buy", "Target", "Costco"],
+      "max_results": 8
+    },
+    {
+      "name": "Everyday / Electronics",
+      "include": ["ssd", "router", "monitor", "earbuds", "headphones", "power bank", "usb-c", "charger", "surge protector", "smart plug", "vacuum"],
+      "exclude": ["laptop", "notebook", "prebuilt", "desktop pc", "gaming pc", "workstation", "mini pc", "barebones", "chromebook", "case", "screen protector"],
+      "max_price": 300,
+      "preferred_merchants": ["Best Buy", "Walmart", "Amazon", "Target"],
       "max_results": 8
     }
   ]
